@@ -1,95 +1,138 @@
+import { FaCalendarDays } from "react-icons/fa6";
+import { FiUsers } from "react-icons/fi";
+import { GiMoneyStack } from "react-icons/gi";
+import { FaArrowRight } from "react-icons/fa";
 import Image from "next/image";
-import styles from "./page.module.css";
-
-export default function Home() {
+import { FaHandHoldingMedical } from "react-icons/fa";
+import { GiHeartPlus } from "react-icons/gi";
+import { GiMedicalPackAlt } from "react-icons/gi";
+import { GiMedicalDrip } from "react-icons/gi";
+import { DataServices, DataSpecialties } from "./Components/Constent"
+import { FaCircle } from "react-icons/fa6";
+import { FaHeartPulse } from "react-icons/fa6";
+import Doctors from "./Components/Doctors";
+import News from "./Components/News";
+import Contact from "./Components/Contact";
+export default function page() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+    <>
+      <div className=" aa space-y-1 h-[80vh] flex pl-[15%] relative">
+        <div className=" my-auto">
+          <p className=" text-Secondary font-medium text-lg">Caring for Life</p>
+          <h1 className=" text-Primary text-5xl font-title">Leading the Way<br />in Medical Excellence</h1>
+          <button className=" bg-Accent mt-6 text-Primary rounded-full py-2 px-5 text-xl font-medium">Our Services</button>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <div className=" flex h-fit absolute gap-20 bottom-10 ">
+          <div className="bg-Primary flex text-white items-center justify-between py-4 px-5 rounded-md text-lg gap-10">
+            <p>Book an Appointment</p>
+            <FaCalendarDays className=" text-4xl" />
+          </div>
+          <div className="bg-Accent flex items-center justify-between py-4 px-5 rounded-md text-lg gap-10">
+            <p>Book an Appointment</p>
+            <FiUsers className=" text-4xl" />
+          </div>
+          <div className="bg-Secondary flex text-white items-center justify-between py-4 px-5 rounded-md text-lg gap-10">
+            <p>Book an Appointment</p>
+            <GiMoneyStack className=" text-4xl" />
+          </div>
+        </div>
+      </div>
+
+      <div className=" text-center py-[4%]">
+        <p className=" text-Secondary font-medium">Welcome to Meddical</p>
+        <h2 className=" text-Primary text-3xl font-title">A Great Place to Receive Care</h2>
+        <p className=" text-Black">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque placerat<br /> scelerisque tortor ornare ornare. Convallis felis vitae tortor augue. Velit nascetur<br /> proin massa in. Consequat faucibus porttitor enim et.</p>
+        <button className=" text-Secondary flex items-center gap-2 mx-auto">Learn More<FaArrowRight className=" text-Black" /></button>
+      </div>
+      <Image className=" mx-auto" src="/img1.jpg" alt="" width={1200} height={350} />
+
+      <div className="text-center py-[4%]">
+        <p className=" text-Secondary font-medium">Care you can believe in</p>
+        <h2 className=" text-Primary text-3xl font-title">Our Services</h2>
+      </div>
+      <div className="grid grid-cols-3 px-[8%] gap-10">
+        <div className="border border-Black rounded-lg bg-white shadow-lg p-5 flex flex-col items-center space-y-3 w-[250px]">
+          {[
+            { icon: <FaHandHoldingMedical className="text-Secondary text-3xl" />, title: "Free Checkup" },
+            { icon: <GiHeartPlus className="text-Secondary text-3xl" />, title: "Cardiogram" },
+            { icon: <GiMedicalPackAlt className="text-Secondary text-3xl" />, title: "DNA Testing" },
+            { icon: <GiMedicalDrip className="text-Secondary text-3xl" />, title: "Blood Bank" },
+          ].map((service, index) => (
+            <div key={index} className="w-full py-3 px-5 flex flex-col items-center text-center rounded-md cursor-pointer transition-all duration-300 hover:bg-Primary hover:text-white">
+              {service.icon}
+              <p className="mt-2">{service.title}</p>
+            </div>
+          ))}
+          <button className="bg-Primary text-white font-semibold w-full py-2 rounded-md transition-all duration-300 hover:text-Primary hover:bg-white border border-Primary">
+            View All
+          </button>
+        </div>
+
+        <div className="flex-1 space-y-5">
+          <h2 className="text-2xl font-semibold">A passion for putting patients first.</h2>
+          <div className="grid grid-cols-2 gap-3">
+            {DataServices.map((item) => (
+              <article key={item.id} className="flex items-center gap-2 text-lg">
+                <FaCircle className="text-Secondary w-3 h-3" />
+                <p>{item.title}</p>
+              </article>
+            ))}
+          </div>
+          <p className="text-gray-600 leading-relaxed">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque placerat scelerisque tortor ornare ornare. Convallis felis vitae tortor augue. Velit nascetur proin massa in. Consequat faucibus porttitor enim et.
+          </p>
+          <p className="text-gray-600 leading-relaxed">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque placerat scelerisque. Convallis felis vitae tortor augue. Velit nascetur proin massa in.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-5">
+          <Image className="rounded-lg shadow-md" src="/img2.jpg" alt="Medical 1" width={250} height={250} />
+          <Image className="rounded-lg shadow-md" src="/img3.jpg" alt="Medical 2" width={250} height={250} />
+        </div>
+      </div>
+
+      <div className="text-center py-[4%]">
+        <p className=" text-Secondary font-medium">Always Caring</p>
+        <h2 className=" text-Primary text-3xl font-title">Our Specialties</h2>
+      </div>
+      <div className="grid grid-cols-4 gap-6 px-[8%] mb-[4%]">
+        {DataSpecialties.map((specialty) => (
+          <article
+            key={specialty.id}
+            className="w-full py-6 px-4 mx-auto border border-gray-300 rounded-lg shadow-lg flex flex-col items-center text-center transition-all duration-300 hover:bg-Primary hover:text-white hover:scale-105"
+          >
+            <FaHeartPulse className="text-Secondary text-4xl mb-2" />
+            <p className="font-medium">{specialty.title}</p>
+          </article>
+        ))}
+      </div>
+
+      <div className=" ss h-[80vh]">
+        <div className=" flex justify-center gap-[20%] items-center py-[4%]">
+          <div className=" my-auto">
+            <h1 className=" text-Secondary font-title text-3xl font-medium">Book an Appointment</h1>
+            <p className=" text-Black">Lorem ipsum dolor sit amet, consectetur adipiscing<br /> elit. Quisque placerat scelerisque tortor ornare<br /> ornare. Convallis felis vitae tortor augue. Velit<br /> nascetur proin massa in. Consequat faucibus<br /> porttitor enim et.</p>
+          </div>
+          <form action="" className=" bg-Primary text-white rounded-md p-3 w-[35%]">
+            <div className="grid grid-cols-2 gap-3">
+              <input className=" py-2 pl-3 outline-0 focus:border-Secondary border-2 border-Primary rounded-md" type="text" placeholder="Name" />
+              <input className=" py-2 pl-3 outline-0 focus:border-Secondary border-2 border-Primary rounded-md" type="text" placeholder="Gender" />
+              <input className=" py-2 pl-3 outline-0 focus:border-Secondary border-2 border-Primary rounded-md" type="email" placeholder="Email" />
+              <input className=" py-2 pl-3 outline-0 focus:border-Secondary border-2 border-Primary rounded-md" type="phone" placeholder="Phone" />
+              <input className=" py-2 pl-3 outline-0 focus:border-Secondary border-2 border-Primary rounded-md" type="data" placeholder="Data" />
+              <input className=" py-2 pl-3 outline-0 focus:border-Secondary border-2 border-Primary rounded-md" type="time" placeholder="Time" />
+              <input className=" py-2 pl-3 outline-0 focus:border-Secondary border-2 border-Primary rounded-md" type="text" placeholder="Doctor" />
+              <input className=" py-2 pl-3 outline-0 focus:border-Secondary border-2 border-Primary rounded-md" type="text" placeholder="Department" />
+            </div>
+            <textarea className=" w-full py-2 outline-0 focus:border-Secondary border-2 border-Primary rounded-md mt-3 pl-3 " rows={8} placeholder="Message"></textarea>
+            <button className=" text-Primary w-full py-1 text-lg bg-Accent">Submit</button>
+          </form>
+        </div>
+      </div>
+      <Doctors />
+      <News />
+      <Contact />
+    </>
   );
 }
