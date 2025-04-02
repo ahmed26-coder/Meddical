@@ -15,21 +15,19 @@ export default function page() {
       <div className="flex justify-center items-center">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345086164!2d144.96305791531664!3d-37.8136119797517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf5779b95d7f8a0b!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sus!4v1636109334557!5m2!1sen!2sus"
-          width="1200"
-          height="450"
           style={{ border: 0 }}
           allowFullScreen
           loading="lazy"
-          className=" py-[4%]"
+          className=" w-full sm:w-[1200px] h-[350px] sm:h-[450px] py-[4%]"
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
 
-      <div className=" flex gap-20 mx-auto justify-center items-center px-[8%]">
+      <div className=" sm:flex gap-20 space-y-8 sm:space-y-0 mx-auto justify-center items-center px-[8%]">
         <div className="">
           <p className=" text-Secondary font-medium">Get in touch</p>
           <h1 className=" text-Primary font-medium font-title text-3xl">Contact</h1>
-          <form action="" className=" flex-col space-y-3 mt-4 bg-Primary text-white p-4">
+          <form action="" className=" flex-col rounded-lg space-y-3 mt-4 bg-Primary text-white p-4">
             <div className=" flex gap-5">
               <input type="text" placeholder='Name' className=" py-2 pl-4 w-full outline-0 border-2 border-Primary focus:border-Secondary rounded-md" />
               <input type="email" placeholder='Email' className=" py-2 pl-4 w-full outline-0 border-2 border-Primary focus:border-Secondary rounded-md" />
@@ -39,7 +37,7 @@ export default function page() {
             <button className=" w-full text-Primary bg-Accent text-lg py-2">Submit</button>
           </form>
         </div>
-        <div className=" grid grid-cols-2 gap-10">
+        <div className=" grid grid-cols-1 sm:grid-cols-2 gap-10">
           <div className=" bg-Accent p-5 text-Primary hover:text-Accent hover:bg-Primary rounded-md space-y-3">
             <LuPhoneCall className=" text-4xl" />
             <h2 className=" text-lg font-medium">Emergency</h2>

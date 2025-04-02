@@ -11,7 +11,7 @@ export default function Contact() {
             <p className="text-Secondary font-medium">Better information, Better health</p>
             <h2 className="text-Primary text-3xl font-title">News</h2>
         </div> 
-        <div className=" px-[8%] grid grid-cols-4 gap-10 pb-[4%]">
+        <div className=" px-[8%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-[4%]">
             <div className=" bg-Accent p-5 text-Primary hover:text-Accent hover:bg-Primary rounded-md space-y-3">
                 <LuPhoneCall className=" text-4xl" />
                 <h2 className=" text-lg font-medium">Emergency</h2>

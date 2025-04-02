@@ -16,10 +16,10 @@ export default function Page() {
   return (
     <>
       <div className="hh ">
-        <h1 className=" pl-[10%] py-[8%] text-Primary font-title text-4xl font-medium">About us</h1>
+        <h1 className=" pl-[10%] py-[8%] text-Primary font-title text-4xl font-medium">Single Page</h1>
       </div>
       <div className=" flex gap-10 px-[8%] py-[4%]">
-        <div className="border border-Black rounded-lg w-fit h-fit bg-white shadow-lg p-5 flex flex-col items-center space-y-3">
+        <div className=" hidden border border-Black rounded-lg w-fit h-fit bg-white shadow-lg p-5 sm:flex flex-col items-center space-y-3">
           {[
             { icon: <FaHandHoldingMedical className="text-Secondary text-3xl" />, title: "Free Checkup" },
             { icon: <GiHeartPlus className="text-Secondary text-3xl" />, title: "Cardiogram" },
@@ -38,8 +38,8 @@ export default function Page() {
         </div>
         <div className="flex-1 space-y-5">
           <Image className="" src="/img6.jpg" alt="" width={800} height={350} />
-          <h2 className="text-2xl font-semibold">A passion for putting patients first.</h2>
-          <div className="grid grid-cols-3 gap-3">
+          <h2 className=" text-lg sm:text-2xl font-semibold">A passion for putting patients first.</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {DataServices.map((item) => (
               <article key={item.id} className="flex items-center gap-2 text-lg">
                 <FaCircle className="text-Secondary w-3 h-3" />

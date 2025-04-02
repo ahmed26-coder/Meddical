@@ -11,9 +11,9 @@ export default function News() {
             <p className="text-Secondary font-medium">Better information, Better health</p>
             <h2 className="text-Primary text-3xl font-title">News</h2>
         </div>
-        <div className=" grid grid-cols-2 px-[10%] gap-10">
+        <div className=" grid grid-cols-1 md:grid-cols-2 px-[10%] gap-5 sm:gap-10">
             {DataNews.map((item) => (
-                <article key={item.id} className=" flex gap-3">
+                <article key={item.id} className=" flex gap-3 items-center">
                     <div className="">
                         <Image src={item.img} alt="Doctor" width={200} height={200} />
                     </div>

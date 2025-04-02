@@ -13,11 +13,11 @@ export default function page() {
             <div className="dd ">
                 <h1 className=" pl-[10%] py-[8%] text-Primary font-title text-4xl font-medium">About us</h1>
             </div>
-            <div className=" flex gap-10 px-[15%] py-[4%]">
+            <div className=" sm:flex space-y-5 sm:space-y-0 gap-10 px-[15%] py-[4%]">
                 <Image className="" src="/img4.jpg" alt="" width={350} height={370} />
                 <div className="flex-1">
                     <p className=" text-Secondary font-medium">Welcome to Hospital name</p>
-                    <h2 className="text-4xl font-title text-Primary font-semibold">Best Care for Your< br />Good Health</h2>
+                    <h2 className=" text-2xl sm:text-4xl font-title text-Primary font-semibold">Best Care for Your< br />Good Health</h2>
                     <div className="grid grid-cols-2 gap-3">
                         {DataServices.map((item) => (
                             <article key={item.id} className="flex items-center gap-2 text-lg">

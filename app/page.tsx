@@ -16,60 +16,71 @@ import Contact from "./Components/Contact";
 export default function page() {
   return (
     <>
-      <div className=" aa space-y-1 h-[80vh] flex pl-[15%] relative">
-        <div className=" my-auto">
-          <p className=" text-Secondary font-medium text-lg">Caring for Life</p>
-          <h1 className=" text-Primary text-5xl font-title">Leading the Way<br />in Medical Excellence</h1>
-          <button className=" bg-Accent mt-6 text-Primary rounded-full py-2 px-5 text-xl font-medium">Our Services</button>
+      <div className="space-y-4 aa h-[80vh] flex flex-col lg:flex-row items-center lg:pl-[15%] relative">
+      <div className="text-center lg:text-left my-auto">
+        <p className="text-Secondary font-medium text-lg">Caring for Life</p>
+        <h1 className="text-Primary text-4xl lg:text-5xl font-title leading-tight">
+          Leading the Way<br />in Medical Excellence
+        </h1>
+        <button className="bg-Accent mt-6 text-Primary rounded-full py-2 px-5 text-xl font-medium">
+          Our Services
+        </button>
+      </div>
+      <div className="flex flex-col lg:flex-row items-center gap-5 lg:gap-20 absolute lg:bottom-10 bottom-5">
+        <div className="bg-Primary flex text-white items-center justify-between py-4 px-5 rounded-md text-lg gap-5 w-64">
+          <p>Book an Appointment</p>
+          <FaCalendarDays className="text-3xl" />
         </div>
-        <div className=" flex h-fit absolute gap-20 bottom-10 ">
-          <div className="bg-Primary flex text-white items-center justify-between py-4 px-5 rounded-md text-lg gap-10">
-            <p>Book an Appointment</p>
-            <FaCalendarDays className=" text-4xl" />
-          </div>
-          <div className="bg-Accent flex items-center justify-between py-4 px-5 rounded-md text-lg gap-10">
-            <p>Book an Appointment</p>
-            <FiUsers className=" text-4xl" />
-          </div>
-          <div className="bg-Secondary flex text-white items-center justify-between py-4 px-5 rounded-md text-lg gap-10">
-            <p>Book an Appointment</p>
-            <GiMoneyStack className=" text-4xl" />
-          </div>
+        <div className="bg-Accent flex items-center justify-between py-4 px-5 rounded-md text-lg gap-5 w-64">
+          <p>Book an Appointment</p>
+          <FiUsers className="text-3xl" />
+        </div>
+        <div className="bg-Secondary flex text-white items-center justify-between py-4 px-5 rounded-md text-lg gap-5 w-64">
+          <p>Book an Appointment</p>
+          <GiMoneyStack className="text-3xl" />
         </div>
       </div>
+    </div>
 
-      <div className=" text-center py-[4%]">
-        <p className=" text-Secondary font-medium">Welcome to Meddical</p>
-        <h2 className=" text-Primary text-3xl font-title">A Great Place to Receive Care</h2>
-        <p className=" text-Black">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque placerat<br /> scelerisque tortor ornare ornare. Convallis felis vitae tortor augue. Velit nascetur<br /> proin massa in. Consequat faucibus porttitor enim et.</p>
-        <button className=" text-Secondary flex items-center gap-2 mx-auto">Learn More<FaArrowRight className=" text-Black" /></button>
-      </div>
+    <div className="text-center py-[4%] px-4 md:px-10">
+        <p className="text-Secondary font-medium">Welcome to Meddical</p>
+        <h2 className="text-Primary text-3xl font-title">A Great Place to Receive Care</h2>
+        <p className="text-Black text-sm md:text-base leading-relaxed">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque placerat<br className="hidden md:block" />
+          scelerisque tortor ornare ornare. Convallis felis vitae tortor augue. Velit nascetur<br className="hidden md:block" />
+          proin massa in. Consequat faucibus porttitor enim et.
+        </p>
+        <button className="text-Secondary flex items-center gap-2 mx-auto mt-4">
+          Learn More<FaArrowRight className="text-Black" />
+        </button>
+    </div>
       <Image className=" mx-auto" src="/img1.jpg" alt="" width={1200} height={350} />
 
-      <div className="text-center py-[4%]">
-        <p className=" text-Secondary font-medium">Care you can believe in</p>
-        <h2 className=" text-Primary text-3xl font-title">Our Services</h2>
+      <div className="text-center py-[4%] px-4 md:px-10">
+        <p className="text-Secondary font-medium text-sm md:text-base">Care you can believe in</p>
+        <h2 className="text-Primary text-2xl md:text-3xl font-title">Our Services</h2>
       </div>
-      <div className="grid grid-cols-3 px-[8%] gap-10">
-        <div className="border border-Black rounded-lg bg-white shadow-lg p-5 flex flex-col items-center space-y-3 w-[250px]">
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-[8%] gap-10">
+        <div className="border hidden border-Black rounded-lg bg-white shadow-lg p-5 sm:flex flex-col items-center space-y-3 w-[250px]">
           {[
             { icon: <FaHandHoldingMedical className="text-Secondary text-3xl" />, title: "Free Checkup" },
             { icon: <GiHeartPlus className="text-Secondary text-3xl" />, title: "Cardiogram" },
             { icon: <GiMedicalPackAlt className="text-Secondary text-3xl" />, title: "DNA Testing" },
             { icon: <GiMedicalDrip className="text-Secondary text-3xl" />, title: "Blood Bank" },
           ].map((service, index) => (
-            <div key={index} className="w-full py-3 px-5 flex flex-col items-center text-center rounded-md cursor-pointer transition-all duration-300 hover:bg-Primary hover:text-white">
+            <div key={index} className=" w-full py-3 px-5 flex flex-col items-center text-center rounded-md cursor-pointer transition-all duration-300 hover:bg-Primary hover:text-white">
               {service.icon}
               <p className="mt-2">{service.title}</p>
             </div>
           ))}
-          <button className="bg-Primary text-white font-semibold w-full py-2 rounded-md transition-all duration-300 hover:text-Primary hover:bg-white border border-Primary">
+          <button className=" bg-Primary text-white font-semibold w-full py-2 rounded-md transition-all duration-300 hover:text-Primary hover:bg-white border border-Primary">
             View All
           </button>
         </div>
 
         <div className="flex-1 space-y-5">
-          <h2 className="text-2xl font-semibold">A passion for putting patients first.</h2>
+          <h2 className="sm:text-2xl text-lg font-semibold">A passion for putting patients first.</h2>
           <div className="grid grid-cols-2 gap-3">
             {DataServices.map((item) => (
               <article key={item.id} className="flex items-center gap-2 text-lg">
@@ -96,7 +107,7 @@ export default function page() {
         <p className=" text-Secondary font-medium">Always Caring</p>
         <h2 className=" text-Primary text-3xl font-title">Our Specialties</h2>
       </div>
-      <div className="grid grid-cols-4 gap-6 px-[8%] mb-[4%]">
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 px-[8%] mb-[4%]">
         {DataSpecialties.map((specialty) => (
           <article
             key={specialty.id}
@@ -108,13 +119,13 @@ export default function page() {
         ))}
       </div>
 
-      <div className=" ss h-[80vh]">
-        <div className=" flex justify-center gap-[20%] items-center py-[4%]">
+      <div className=" ss h-[100vh] sm:h-[80vh]">
+        <div className=" sm:flex justify-center gap-[20%] items-center py-[4%]">
           <div className=" my-auto">
             <h1 className=" text-Secondary font-title text-3xl font-medium">Book an Appointment</h1>
             <p className=" text-Black">Lorem ipsum dolor sit amet, consectetur adipiscing<br /> elit. Quisque placerat scelerisque tortor ornare<br /> ornare. Convallis felis vitae tortor augue. Velit<br /> nascetur proin massa in. Consequat faucibus<br /> porttitor enim et.</p>
           </div>
-          <form action="" className=" bg-Primary text-white rounded-md p-3 w-[35%]">
+          <form action="" className=" bg-Primary mt-3 sm:mt-0 text-white rounded-md p-3 w-full sm:w-[35%]">
             <div className="grid grid-cols-2 gap-3">
               <input className=" py-2 pl-3 outline-0 focus:border-Secondary border-2 border-Primary rounded-md" type="text" placeholder="Name" />
               <input className=" py-2 pl-3 outline-0 focus:border-Secondary border-2 border-Primary rounded-md" type="text" placeholder="Gender" />

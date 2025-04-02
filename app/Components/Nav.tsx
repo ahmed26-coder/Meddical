@@ -5,7 +5,7 @@ import { MdAccessTime } from "react-icons/md";
 import { CiMenuFries } from "react-icons/ci";
 import { IoLocationOutline, IoClose } from "react-icons/io5";
 import { IoMdSearch } from "react-icons/io";
-import { DataNav } from "./Constent"
+import { DataNav } from "./Constent";
 import Link from "next/link";
 
 export default function Nav(): JSX.Element {
@@ -44,7 +44,7 @@ export default function Nav(): JSX.Element {
         </div>
       </div>
 
-      <div className="bg-Primary flex justify-between items-center px-[8%] py-3">
+      <div className="bg-Primary flex justify-between items-center px-[8%] py-3 relative">
         <h1 className="font-title text-white text-3xl lg:hidden">Med<span className="text-Accent">dical</span></h1>
         <div className="lg:hidden flex items-center gap-4">
           <IoMdSearch className="text-white text-3xl" />
@@ -53,14 +53,16 @@ export default function Nav(): JSX.Element {
           </button>
         </div>
 
-        <ul className={`lg:flex gap-8 text-lg text-white ${isMenuOpen ? 'flex flex-col absolute bg-Primary w-full left-0 top-21 py-5 px-[8%]' : 'hidden'}`}>
+        <ul className={`lg:flex text-lg text-white transition-all duration-300 ease-in-out 
+          ${isMenuOpen ? 'flex flex-col gap-2 absolute bg-Primary w-full left-0 top-[4rem] z-50 py-5 px-[8%]' : 'hidden gap-15'}`}>
           {DataNav.map((item) => (
             <li 
               key={item.id} 
-              className={`py-2 ${activeItem === item .title? 'text-Accent' : ''}`}
+              className={`py-2 ${activeItem === item.title ? 'text-Accent' : ''}`}
               onClick={() => setActiveItem(item.title)}
-            ><Link href={item.link}>
-              {item.title}
+            >
+              <Link href={item.link}>
+                {item.title}
               </Link>
             </li>
           ))}
